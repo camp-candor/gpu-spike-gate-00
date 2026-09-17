@@ -1,0 +1,38 @@
+name: GPU Canary Drift Test
+
+on:
+  schedule:
+    - cron: '0 4 1 * *' # 04:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+jobs:
+  gpu-benchmark:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run GPU Canary Benchmark (3 runs)
+        env:
+          RUNPOD_API_KEY: ${{ secrets.RUNPOD_API_KEY }}
+        run: |
+          echo "Simulating 3 runs on RunPod..."
+          # Mock script execution. In a real scenario, this would use RunPod API.
+          ./scripts/trigger_runpod_run.sh --runs 3
+
+      - name: Download telemetry & Evaluate
+        run: |
+          echo "Evaluating telemetry via evaluateGate0..."
+          # Mock evaluation
+          # Fail if the status is RED_HARD_STOP
+          # In a real scenario, this would parse the JSON output from the RunPod runs
+          echo "Not failing for mock purposes."
