@@ -1,0 +1,13 @@
+{
+  "run_id": "<UUID>",
+  "timestamp": "<ISO-8601>",
+  "telemetry": {
+    "cold_ingress_seconds": 0.0,
+    "vram_hydration_seconds": 0.0,
+    "inference_seconds_48f": 0.0,
+    "total_shot_cost_usd": 0.0,
+    "oom_failures_out_of_10": 0
+  },
+  "verdict": "GREEN_PROCEED",
+  "correlated_trend_warnings": []
+}
