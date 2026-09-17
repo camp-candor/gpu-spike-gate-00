@@ -1,3 +1,3 @@
 cd..
-cd vcode-debug
+cd vcode
 start Code.exe ../gpu-spike-gate-00
