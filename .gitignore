@@ -1,0 +1,9 @@
+# Credentials and Environment
+.env
+.env.*
+*.pem
+
+# Benchmark Telemetry & Outputs
+/tmp/
+benchmarks/gpu_spike.json
+node_modules/

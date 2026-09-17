@@ -1,0 +1,13 @@
+{
+  "name": "infra-gate0-harness",
+  "type": "module",
+  "scripts": {
+    "benchmark": "tsx harness.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
